@@ -1,0 +1,8 @@
+- name: Change a file
+  hosts: target1
+
+  tasks:
+    - name: Change a file on target1 to owner guest
+      file:
+        owner: guest
+        path: /tmp/test.txt

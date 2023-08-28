@@ -1,0 +1,12 @@
+- name: Make a file
+  # hosts: "{{ target_hosts | default('localhost') }}"
+  # hosts: target1 target2
+  hosts: all
+
+  tasks:
+    - name: Create a file
+      copy:
+        content: test
+        # uncomment to show config drift fix
+        # owner: root
+        dest: /tmp/test.txt
